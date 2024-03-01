@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administrator Website</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="profile">
+        <div class="info-profile">
+        <img src="Eastern_Samar_State_University_logo.png" alt="University Logo">
+        <h3>Arlene Sajorda</h3>
+    </div>
+        <ul class="nav">
+            <li><a href="#" class="nav-link dashboard-link">Dashboard</a></li>
+            <li>
+                <a href="#" class="nav-link account-toggle">Account <span class="material-icons arrow">keyboard_arrow_right</span></a>
+                <ul class="dropdown">
+                    <li><a href="#" class="nav-link canteen-link">Canteen</a></li>
+                    <li><a href="#" class="nav-link teacher-link">Teacher</a></li>
+                    <li><a href="#" class="nav-link logout-link">Logout</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="nav-link setting-toggle">Setting <span class="material-icons arrow">keyboard_arrow_right</span></a>
+                <ul class="dropdown1">
+                    <li><a href="#" class="nav-link theme-link">Theme</a></li>
+                    <li><a href="#" class="nav-link themes-link">Darkmode</a></li>
+                    <li><a href="#" class="nav-link theme-link">Notifications</a></li>
+                </ul>
+            
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div class="modal" id="logoutModal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Are you sure you want to logout?</p>
+          <button id="confirmLogout">Yes, Logout</button>
+        </div>
+      </div>
+    <h3 class="title_admin">Administration</h3>
+  <div class="dashboard-content" >
+    <div class="box-container">
+    <div class="box"  style="width: 100%;
+    background-image: linear-gradient(to right, #FF800B, #C86407);">
+        <div class="box-content">
+        <h2>Sales</h2>
+        <p class="total">123k</p>
+        </div>
+        <div class="image-list">
+             <img src="./sales.png" alt="">
+        </div>
+    </div>
+    <div class="box" style="background-image: linear-gradient(to right, #FF4191, #FF003D);">
+        <div class="box-content">
+        <h2>Products</h2>
+        <p>456k</p>
+        </div>
+        <div class="image-list">
+            <img src="./products.png" alt="">
+       </div>
+    </div>
+    <div class="box" style="background-image: linear-gradient(to right, #43F66A, #00C95C);">
+        <div class="box-content">
+        <h2>Orders</h2>
+        <p>789k</p>
+        </div>
+        <div class="image-list">
+            <img src="./orders.png" alt="">
+       </div>
+    </div>
+    <div class="box" style="background-image: linear-gradient(to right, #48E9F3, #0699D8);">
+        <div class="box-content">
+        <h2>Canteen</h2>
+        <p>234k</p>
+        </div>
+        <div class="image-list">
+            <img src="./canteen.png" alt="">
+       </div>
+    </div>
+    </div>
+   <div class="dashboard-chart-activity">
+      <div class="box1">
+        <h2>Sale Analysis</h2>
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>      
+      </div>
+      <div class="box1">
+          <h2>Recent Activity</h2>
+          <div class="recent-container">
+             <div class="box-recent">
+                 <img src="./Eastern_Samar_State_University_logo.png" alt="" class="user-img-recent">
+                 <div class="recent-content">
+                    <p>Checkout of orders total of 123.00php COD paymen method.</p>
+                 </div>
+                 <div class="date-recent">
+                    <p>Feb. 12 2024</p>
+                 </div>
+             </div>
+          </div>    
+      </div>
+    </div>
+    </div>
+
+    <div class="canteen-content" style="display: none;">
+      <div class="table-box">
+        <div class="box1">
+          <table id="canteenTable">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Email Address</th>
+                      <th>Phone Number</th>
+                      <th>Location</th>
+                      <th>Canteen Name</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Table rows will be dynamically populated -->
+              </tbody>
+          </table>
+        </div>
+          <div class="box1">
+            <h2>Log recent</h2>
+            <div class="recent-container">
+               <div class="box-recent">
+                   <img src="./Eastern_Samar_State_University_logo.png" alt="" class="user-img-recent">
+                   <div class="recent-content">
+                      <p>Checkout of orders total of 123.00php COD paymen method.</p>
+                   </div>
+                   <div class="date-recent">
+                      <p>Feb. 12 2024</p>
+                   </div>
+               </div>
+            </div>    
+        </div>
+      </div>
+  </div>
+
+  <!-- Teacher content -->
+  <div class="teacher-content" style="display: none;">
+      <div class="table-box">
+        <div class="box1">
+          <table id="teacherTable">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Email Address</th>
+                      <th>Department</th>
+                      <th>Phone Number</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Table rows will be dynamically populated -->
+              </tbody>
+          </table>
+ </div>
+          <div class="box1">
+            <h2>Log recent</h2>
+            <div class="recent-container">
+               <div class="box-recent">
+                   <img src="./Eastern_Samar_State_University_logo.png" alt="" class="user-img-recent">
+                   <div class="recent-content">
+                      <p>Checkout of orders total of 123.00php COD paymen method.</p>
+                   </div>
+                   <div class="date-recent">
+                      <p>Feb. 12 2024</p>
+                   </div>
+               </div>
+            </div>    
+        </div>
+
+      </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
